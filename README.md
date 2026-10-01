@@ -71,7 +71,7 @@ All environment-specific values and secrets live in `.env` (loaded via `dotenv`)
 | `APP_EMAIL`, `APP_PASSWORD` | Web app login credentials |
 | `PRODUCT_NAME`, `PRODUCT_QUANTITY`, `TOTAL_PRICE` | Known product used by web tests |
 | `API_BASE_URL` | Base URL of the REST API under test (FakeStore) |
-| `USERNAME`, `PASSWORD`, `USER_ID` | API auth credentials and default user ID |
+| `FAKESTORE_USERNAME`, `FAKESTORE_PASSWORD`, `USER_ID` | API auth credentials and default user ID |
 | `PRODUCT_ID`, `CART_ID`, `LIMIT` | Default resource IDs and limit |
 | `START_DATE`, `END_DATE` | Date range for cart filtering |
 | `DB_HOST`, `DB_USER`, `DB_PASSWORD`, `DB_NAME`, `DB_PORT` | MySQL connection |

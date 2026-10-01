@@ -11,8 +11,8 @@ test.describe('Authentication API Tests', () => {
     // ---------------------------------------------------------
 
     const BASE_URL = process.env.API_BASE_URL || Routes.BASE_URL;
-    const USERNAME = process.env.USERNAME || '';
-    const PASSWORD = process.env.PASSWORD || '';
+    const USERNAME = process.env.FAKESTORE_USERNAME || '';
+    const PASSWORD = process.env.FAKESTORE_PASSWORD || '';
 
     // ---------------------------------------------------------
     // POST - Login (Successful)
