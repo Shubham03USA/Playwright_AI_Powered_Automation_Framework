@@ -1,0 +1,17 @@
+# Taste Learnings
+- Prefers non-destructive changes: preserve existing files and avoid deleting or overwriting implementation files unless strictly necessary. Confidence: 0.9
+- Prefers minimal, targeted changes: create only what is required rather than scaffolding extra content. Confidence: 0.8
+- Follows existing project naming conventions. Confidence: 0.8
+- Uses placeholder files (e.g., `.gitkeep`) to keep empty directories trackable in Git. Confidence: 0.8
+- After structural or file changes, wants a final directory tree and a brief list of newly created files. Confidence: 0.8
+- Works with Playwright + TypeScript automation covering Web, API, and DB testing. Confidence: 0.8
+- When asked to make a project-wide change (e.g., update a URL/value across the project), reports the exact file names and where each occurrence was found/changed. Confidence: 0.7
+- Maintains a framework-conventions context file (`playwright-mcp-context.md`) as the source of truth and expects test implementations to follow the conventions it defines. Confidence: 0.85
+- Specifies test scenarios as structured numbered steps with an "Expected Result" summary and expects them implemented as end-to-end tests. Confidence: 0.65
+- For CRUD tests, prefers deterministic (fixed) test data over random/Faker-generated data and expects returned IDs to be captured and reused. Confidence: 0.85
+- Prefers CRUD (create/update/delete) tests split into a dedicated spec file (e.g., `crud.spec.ts`) rather than mixed into per-resource specs. Confidence: 0.85
+- For Git commits, stages only appropriate project changes and excludes secrets, `.env` files, generated files, dependencies, and anything already in `.gitignore`. Confidence: 0.85
+- Prefers clear, descriptive commit messages that reflect the actual changes made. Confidence: 0.8
+- Avoids creating empty commits; when there is nothing to commit, reports the working tree is clean. Confidence: 0.85
+- Reports Git push failures honestly with the exact reason and never claims a push succeeded when it did not. Confidence: 0.9
+- After Git commit/push operations, reports a concise structured summary (commit message, branch, push result). Confidence: 0.7
