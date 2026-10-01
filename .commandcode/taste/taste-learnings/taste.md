@@ -10,8 +10,15 @@
 - Specifies test scenarios as structured numbered steps with an "Expected Result" summary and expects them implemented as end-to-end tests. Confidence: 0.65
 - For CRUD tests, prefers deterministic (fixed) test data over random/Faker-generated data and expects returned IDs to be captured and reused. Confidence: 0.85
 - Prefers CRUD (create/update/delete) tests split into a dedicated spec file (e.g., `crud.spec.ts`) rather than mixed into per-resource specs. Confidence: 0.85
-- For Git commits, stages only appropriate project changes and excludes secrets, `.env` files, generated files, dependencies, and anything already in `.gitignore`. Confidence: 0.85
+- For Git commits, stages only appropriate project changes and excludes secrets, `.env` files, generated files, dependencies, anything already in `.gitignore`, and the taste-learning system's own files (e.g., `.commandcode/taste/`). Confidence: 0.85
 - Prefers clear, descriptive commit messages that reflect the actual changes made. Confidence: 0.8
 - Avoids creating empty commits; when there is nothing to commit, reports the working tree is clean. Confidence: 0.85
 - Reports Git push failures honestly with the exact reason and never claims a push succeeded when it did not. Confidence: 0.9
 - After Git commit/push operations, reports a concise structured summary (commit message, branch, push result). Confidence: 0.7
+- When the remote branch already has commits (e.g., an auto-generated README), prefers integrating via rebase (`git pull --rebase`) rather than force-pushing or creating a merge commit. Confidence: 0.6
+- Before committing, verifies that test/seed data files contain only fake or test credentials, not real secrets. Confidence: 0.7
+- Uses imperative-mood, sentence-case commit subjects (e.g., "Add comprehensive README documentation") with a multi-line body and a `Co-authored-by: CommandCodeBot <noreply@commandcode.ai>` trailer. Confidence: 0.75
+- Never hardcodes credentials or secrets in source code, even as fallback defaults (e.g., `process.env.X || 'literal'`); credentials must come only from environment variables (`.env`, kept gitignored). Confidence: 0.85
+- Distinguishes public/documented demo credentials from real secrets: public demo values (e.g., FakeStore login) are acceptable to commit directly (e.g., in CI workflow env vars) and do not need GitHub Secrets; secrets protection is reserved for real/private credentials. Confidence: 0.8
+- Works on Windows; prefers namespaced credential env var names (e.g., `FAKESTORE_USERNAME`, `FAKESTORE_PASSWORD`) over generic/reserved ones (`USERNAME`, `PASSWORD`), since `USERNAME` is a reserved Windows env var and dotenv won't override it. Confidence: 0.7
+- When a test fails, wants the root cause diagnosed and explained (the "why"), not just a fix applied to make it pass. Confidence: 0.6

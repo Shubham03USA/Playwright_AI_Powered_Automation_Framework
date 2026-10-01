@@ -4,6 +4,9 @@ node_modules/
 # Environment (secrets)
 .env
 
+#Prompts
+
+
 # Playwright
 /test-results/
 /playwright-report/
@@ -14,4 +17,12 @@ node_modules/
 # Test reports (generated)
 /reports/
 /allure-results/
+/allure-report/
 /custom-report/
+
+# Tool / IDE specific configs
+.claude/
+.commandcode/
+.playwright-cli/
+.playwright-mcp/
+
